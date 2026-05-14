@@ -1,14 +1,15 @@
 # SEA: Stateful Execution Environment for Conversational Big Data Analytics
 
 <p align="center">
-  <img src="https://img.shields.io/badge/NeurIPS%202025-Workshop%20Paper-purple" />
+  <a href="https://neurips.cc/virtual/2025/loc/san-diego/124546"><img src="https://img.shields.io/badge/NeurIPS%202025-Workshop%20Paper-purple" /></a>
+  <a href="https://huggingface.co/datasets/ajay-anil-kumar/Globo-Mart"><img src="https://img.shields.io/badge/🤗%20Dataset-GloboMart-yellow" /></a>
   <img src="https://img.shields.io/badge/python-3.10%2B-blue" />
   <img src="https://img.shields.io/badge/license-MIT-green" />
 </p>
 
 > **Paper**: *SEA: Stateful Execution Environment for Conversational Big Data Analytics*  
 > Rohit Kumar · Ajay Anil Kumar — NeurIPS 2025 Workshop: Scaling Environments for Agents  
-> [[Paper PDF](SEA_Camera_Ready.pdf)] · [[Dataset & Code](https://osf.io/buxma/files/osfstorage?view_only=f7de66430a7b42e0acbc6330ecedd255)]
+> [[Paper](https://neurips.cc/virtual/2025/loc/san-diego/124546)] · [[Dataset](https://huggingface.co/datasets/ajay-anil-kumar/Globo-Mart)] · [[Benchmark & Code](https://osf.io/buxma/files/osfstorage?view_only=f7de66430a7b42e0acbc6330ecedd255)]
 
 ---
 
@@ -251,7 +252,8 @@ A synthetic but realistic e-commerce data warehouse with **8 tables** (up to 6 M
 | `Dim_Marketing` | Campaign spend by channel |
 | `Dim_Shipments` | Fulfilment and delivery data |
 
-Dataset + benchmark: [osf.io/buxma](https://osf.io/buxma/files/osfstorage?view_only=f7de66430a7b42e0acbc6330ecedd255)
+Dataset: [huggingface.co/datasets/ajay-anil-kumar/Globo-Mart](https://huggingface.co/datasets/ajay-anil-kumar/Globo-Mart)  
+Benchmark & code: [osf.io/buxma](https://osf.io/buxma/files/osfstorage?view_only=f7de66430a7b42e0acbc6330ecedd255)
 
 ---
 
