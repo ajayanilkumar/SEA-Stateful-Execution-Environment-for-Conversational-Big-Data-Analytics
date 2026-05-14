@@ -1,0 +1,152 @@
+{
+  "name": "dim_date",
+  "file_name": "dim_date",
+  "dataset_description": "This is a Dimension table in the GloboMart star schema, providing comprehensive temporal attributes. It serves as a central source for all date-related information, enabling robust time-based analysis of sales, customer behavior, inventory, and other key e-commerce metrics. Fact tables will link to this dimension via the 'date_key' to allow for slicing and dicing data by various time granularities like day, week, month, quarter, and year, as well as identifying weekends and holidays.",
+  "fields": [
+    {
+      "column": "date_key",
+      "properties": {
+        "dtype": "number",
+        "std": 3.0276503540974917,
+        "min": 20230703,
+        "max": 20230712,
+        "samples": [
+          20230711,
+          20230704,
+          20230708
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "date_id",
+        "description": "A unique integer key representing a specific calendar date, typically in YYYYMMDD format. This is the primary key for the dim_date table and serves as the foreign key for linking to fact tables, ensuring efficient joins for time-based analysis."
+      }
+    },
+    {
+      "column": "full_date",
+      "properties": {
+        "dtype": "date",
+        "min": "2023-07-03T00:00:00",
+        "max": "2023-07-12T00:00:00",
+        "samples": [
+          "2023-07-11T00:00:00",
+          "2023-07-04T00:00:00",
+          "2023-07-08T00:00:00"
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "date",
+        "description": "The complete calendar date in a standard date format (e.g., YYYY-MM-DD). This column provides the human-readable date for reporting and display purposes."
+      }
+    },
+    {
+      "column": "day_of_week",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "Monday",
+          "Tuesday",
+          "Saturday"
+        ],
+        "num_unique_values": 7,
+        "semantic_type": "day_of_week",
+        "description": "The name of the day of the week (e.g., 'Monday', 'Tuesday') for the corresponding date. Useful for analyzing daily patterns in sales, website traffic, or customer service interactions."
+      }
+    },
+    {
+      "column": "day_of_month",
+      "properties": {
+        "dtype": "number",
+        "std": 3.0276503540974917,
+        "min": 3,
+        "max": 12,
+        "samples": [
+          11,
+          4,
+          8
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "day_of_month",
+        "description": "The numerical day of the month (1-31) for the given date. Allows for analysis of trends within a month, such as month-end sales boosts."
+      }
+    },
+    {
+      "column": "month",
+      "properties": {
+        "dtype": "number",
+        "std": 0.0,
+        "min": 7,
+        "max": 7,
+        "samples": [
+          7
+        ],
+        "num_unique_values": 1,
+        "semantic_type": "month",
+        "description": "The numerical representation of the month (1-12) for the given date. Essential for monthly performance reporting and trend analysis."
+      }
+    },
+    {
+      "column": "quarter",
+      "properties": {
+        "dtype": "number",
+        "std": 0.0,
+        "min": 3,
+        "max": 3,
+        "samples": [
+          3
+        ],
+        "num_unique_values": 1,
+        "semantic_type": "quarter",
+        "description": "The numerical quarter of the year (1-4) for the given date. Used for quarterly business reviews and financial reporting."
+      }
+    },
+    {
+      "column": "year",
+      "properties": {
+        "dtype": "number",
+        "std": 0.0,
+        "min": 2023,
+        "max": 2023,
+        "samples": [
+          2023
+        ],
+        "num_unique_values": 1,
+        "semantic_type": "year",
+        "description": "The four-digit year for the given date. Crucial for annual comparisons and long-term trend analysis of e-commerce performance."
+      }
+    },
+    {
+      "column": "is_weekend",
+      "properties": {
+        "dtype": "boolean",
+        "samples": [
+          true,
+          false
+        ],
+        "num_unique_values": 2,
+        "semantic_type": "boolean",
+        "description": "A boolean flag indicating whether the date falls on a weekend (Saturday or Sunday). This allows for easy segmentation of data to compare weekday vs. weekend sales, customer activity, or operational load."
+      }
+    },
+    {
+      "column": "is_holiday",
+      "properties": {
+        "dtype": "boolean",
+        "samples": [
+          false
+        ],
+        "num_unique_values": 1,
+        "semantic_type": "boolean",
+        "description": "A boolean flag indicating whether the date is a recognized public holiday. This is vital for understanding anomalies in sales or traffic that might be attributed to holiday periods, which often see increased or decreased customer engagement."
+      }
+    }
+  ],
+  "field_names": [
+    "date_key",
+    "full_date",
+    "day_of_week",
+    "day_of_month",
+    "month",
+    "quarter",
+    "year",
+    "is_weekend",
+    "is_holiday"
+  ]
+}

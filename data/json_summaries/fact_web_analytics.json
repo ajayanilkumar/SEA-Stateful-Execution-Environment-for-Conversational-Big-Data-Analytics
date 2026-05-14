@@ -1,0 +1,178 @@
+{
+  "name": "fact_web_analytics",
+  "file_name": "fact_web_analytics",
+  "dataset_description": "This table, `fact_web_analytics`, serves as a core Fact table in GloboMart's e-commerce star schema. It captures detailed user interaction data and behavioral metrics from the GloboMart website. Each row represents a specific event or aggregated session metric, providing insights into customer engagement, navigation patterns, and conversion funnels. It links to dimension tables such as `dim_date`, `dim_customer`, and `dim_product` via their respective keys, enabling comprehensive analysis of web activity in relation to time, customers, and products.",
+  "fields": [
+    {
+      "column": "session_id",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "bc8eace7-e4a4-450e-995d-80f2c1a81a19",
+          "d8ff623b-ec37-4f81-9643-8033f70fcd86",
+          "6e4d4fc7-b03c-40e4-a8aa-04d3b745396c"
+        ],
+        "num_unique_values": 3,
+        "semantic_type": "session_id",
+        "description": "A unique identifier for a single user session on the GloboMart website, representing a continuous period of activity."
+      }
+    },
+    {
+      "column": "date_key",
+      "properties": {
+        "dtype": "number",
+        "std": 4.2895221179054435,
+        "min": 20220819.0,
+        "max": 20220830.0,
+        "samples": [
+          20220819.0,
+          20220825.0,
+          20220830.0
+        ],
+        "num_unique_values": 3,
+        "semantic_type": "date",
+        "description": "A surrogate key representing the date when the web analytics event occurred, linking to the `dim_date` dimension table."
+      }
+    },
+    {
+      "column": "customer_key",
+      "properties": {
+        "dtype": "number",
+        "std": 17843.030477223063,
+        "min": 12494.0,
+        "max": 46407.0,
+        "samples": [
+          46261.0,
+          46407.0,
+          12494.0
+        ],
+        "num_unique_values": 3,
+        "semantic_type": "customer_id",
+        "description": "A surrogate key identifying the customer associated with the web session, linking to the `dim_customer` dimension table. Null if the user is not logged in."
+      }
+    },
+    {
+      "column": "product_key_viewed",
+      "properties": {
+        "dtype": "number",
+        "std": 2549.9763942262507,
+        "min": 5066.0,
+        "max": 14830.0,
+        "samples": [
+          9597.0,
+          10509.0,
+          9780.0
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "product_id",
+        "description": "A surrogate key for the specific product that was viewed or interacted with during the web session, linking to the `dim_product` dimension table."
+      }
+    },
+    {
+      "column": "session_duration_seconds",
+      "properties": {
+        "dtype": "number",
+        "std": 217.08956165089506,
+        "min": 75,
+        "max": 660,
+        "samples": [
+          316,
+          660,
+          341
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "duration",
+        "description": "The total duration, in seconds, that the user spent on the GloboMart website during this specific session."
+      }
+    },
+    {
+      "column": "pages_viewed",
+      "properties": {
+        "dtype": "number",
+        "std": 2.3687784005919825,
+        "min": 1,
+        "max": 8,
+        "samples": [
+          7,
+          8,
+          4
+        ],
+        "num_unique_values": 6,
+        "semantic_type": "count",
+        "description": "The total number of distinct pages a user navigated through during a single web session."
+      }
+    },
+    {
+      "column": "time_on_page_seconds",
+      "properties": {
+        "dtype": "number",
+        "std": 47.051272269963356,
+        "min": 15,
+        "max": 145,
+        "samples": [
+          145,
+          15,
+          141
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "duration",
+        "description": "The duration, in seconds, that the user spent actively viewing a specific page during their web session."
+      }
+    },
+    {
+      "column": "scroll_depth_percent",
+      "properties": {
+        "dtype": "number",
+        "std": 21.33229164123411,
+        "min": 20,
+        "max": 91,
+        "samples": [
+          55,
+          91,
+          20
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "percentage",
+        "description": "The maximum percentage of the page content that the user scrolled down during their visit to that page (e.g., 100 means they scrolled to the very bottom)."
+      }
+    },
+    {
+      "column": "action_type",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "page_view",
+          "search",
+          "add_to_cart"
+        ],
+        "num_unique_values": 3,
+        "semantic_type": "event_type",
+        "description": "The specific type of interaction or event performed by the user on the website, such as 'page_view', 'search', 'add_to_cart', 'checkout', etc."
+      }
+    },
+    {
+      "column": "was_conversion",
+      "properties": {
+        "dtype": "boolean",
+        "samples": [
+          false
+        ],
+        "num_unique_values": 1,
+        "semantic_type": "boolean",
+        "description": "A boolean flag indicating whether the web session ultimately resulted in a conversion event, such as a purchase, newsletter signup, or other defined goal."
+      }
+    }
+  ],
+  "field_names": [
+    "session_id",
+    "date_key",
+    "customer_key",
+    "product_key_viewed",
+    "session_duration_seconds",
+    "pages_viewed",
+    "time_on_page_seconds",
+    "scroll_depth_percent",
+    "action_type",
+    "was_conversion"
+  ]
+}

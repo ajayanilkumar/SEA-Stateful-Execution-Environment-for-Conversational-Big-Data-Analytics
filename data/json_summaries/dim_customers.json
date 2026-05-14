@@ -1,0 +1,158 @@
+{
+  "name": "dim_customers",
+  "file_name": "dim_customers",
+  "dataset_description": "This is a Dimension table in the GloboMart star schema, containing detailed attributes about individual customers. It serves as a lookup table for customer-related information, allowing fact tables (like sales or order facts) to be analyzed and filtered by various customer characteristics. This table is crucial for understanding customer demographics, behavior, and segmentation, enabling targeted marketing, customer service, and personalized experiences.",
+  "fields": [
+    {
+      "column": "customer_key",
+      "properties": {
+        "dtype": "number",
+        "std": 3.0276503540974917,
+        "min": 25101,
+        "max": 25110,
+        "samples": [
+          25109,
+          25102,
+          25106
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "customer_key",
+        "description": "A unique surrogate key used internally for database joins and referential integrity within the data warehouse. It is not exposed to external systems."
+      }
+    },
+    {
+      "column": "customer_id",
+      "properties": {
+        "dtype": "number",
+        "std": 3.0276503540974917,
+        "min": 1012000,
+        "max": 1012009,
+        "samples": [
+          1012008,
+          1012001,
+          1012005
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "customer_id",
+        "description": "The unique identifier assigned to each customer in GloboMart's operational systems. This is the primary business key for customers."
+      }
+    },
+    {
+      "column": "country",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "USA",
+          "India"
+        ],
+        "num_unique_values": 2,
+        "semantic_type": "country",
+        "description": "The country where the customer is registered or primarily resides, indicating their geographical location."
+      }
+    },
+    {
+      "column": "city",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "Unknown"
+        ],
+        "num_unique_values": 1,
+        "semantic_type": "city",
+        "description": "The city where the customer is registered or primarily resides. 'Unknown' indicates missing or unspecified city data."
+      }
+    },
+    {
+      "column": "registration_date",
+      "properties": {
+        "dtype": "date",
+        "min": "2020-11-14T00:00:00",
+        "max": "2025-05-17T00:00:00",
+        "samples": [
+          "2025-01-20T00:00:00",
+          "2024-11-29T00:00:00",
+          "2023-11-07T00:00:00"
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "timestamp",
+        "description": "The date when the customer first created an account or registered with GloboMart."
+      }
+    },
+    {
+      "column": "customer_segment",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "Sleeper",
+          "High-Value",
+          "New"
+        ],
+        "num_unique_values": 4,
+        "semantic_type": "customer_segment",
+        "description": "A classification of the customer based on their purchasing behavior, value, or engagement level (e.g., 'High-Value', 'New', 'Sleeper', 'Churned')."
+      }
+    },
+    {
+      "column": "lifetime_value",
+      "properties": {
+        "dtype": "number",
+        "std": 3564.6299784091666,
+        "min": 74.91,
+        "max": 11703.2,
+        "samples": [
+          598.45,
+          150.89,
+          601.41
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "revenue",
+        "description": "The estimated total monetary value a customer is expected to bring to GloboMart over the entire period of their relationship."
+      }
+    },
+    {
+      "column": "total_orders",
+      "properties": {
+        "dtype": "number",
+        "std": 5.78215646046813,
+        "min": 1,
+        "max": 19,
+        "samples": [
+          1,
+          7,
+          9
+        ],
+        "num_unique_values": 6,
+        "semantic_type": "order_count",
+        "description": "The cumulative number of orders placed by this customer since their registration."
+      }
+    },
+    {
+      "column": "days_since_last_order",
+      "properties": {
+        "dtype": "number",
+        "std": 143.98703645351782,
+        "min": 28,
+        "max": 511,
+        "samples": [
+          51,
+          511,
+          28
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "recency",
+        "description": "The number of days that have elapsed since the customer's most recent order. A lower number indicates higher recency."
+      }
+    }
+  ],
+  "field_names": [
+    "customer_key",
+    "customer_id",
+    "country",
+    "city",
+    "registration_date",
+    "customer_segment",
+    "lifetime_value",
+    "total_orders",
+    "days_since_last_order"
+  ]
+}

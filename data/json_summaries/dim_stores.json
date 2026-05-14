@@ -1,0 +1,158 @@
+{
+  "name": "dim_stores",
+  "file_name": "dim_stores",
+  "dataset_description": "This is a Dimension table containing static and descriptive information about GloboMart's physical retail stores. It serves as a lookup table for store-related attributes, enabling analysis of sales, inventory, and other operational metrics by various store characteristics. In a star schema, it links to fact tables (e.g., fact_sales, fact_inventory) via the 'store_key' to provide contextual information for transactions and events.",
+  "fields": [
+    {
+      "column": "store_key",
+      "properties": {
+        "dtype": "number",
+        "std": 3.0276503540974917,
+        "min": 201,
+        "max": 210,
+        "samples": [
+          209,
+          202,
+          206
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "store_key",
+        "description": "A unique surrogate key for each store, used for efficient joins in the data warehouse. This is the primary key of the dimension table."
+      }
+    },
+    {
+      "column": "store_id",
+      "properties": {
+        "dtype": "number",
+        "std": 3.0276503540974917,
+        "min": 11001,
+        "max": 11010,
+        "samples": [
+          11009,
+          11002,
+          11006
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "store_id",
+        "description": "The unique business identifier for each physical retail store within GloboMart's operational systems. This is the natural key for the store."
+      }
+    },
+    {
+      "column": "store_name",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "Masonport Central Store",
+          "South Courtneyfurt Central Store",
+          "Baranagar Central Store"
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "store_name",
+        "description": "The official name of the retail store, often including its location or specific designation (e.g., 'GloboMart Downtown', 'GloboMart East Coast Flagship')."
+      }
+    },
+    {
+      "column": "city",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "Masonport",
+          "South Courtneyfurt",
+          "Baranagar"
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "city",
+        "description": "The city where the retail store is physically located."
+      }
+    },
+    {
+      "column": "country",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "USA",
+          "India"
+        ],
+        "num_unique_values": 2,
+        "semantic_type": "country",
+        "description": "The country where the retail store is located, indicating its geographical market."
+      }
+    },
+    {
+      "column": "region",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "Mississippi",
+          "Indiana",
+          "West Bengal"
+        ],
+        "num_unique_values": 9,
+        "semantic_type": "region",
+        "description": "The administrative or geographical region (e.g., state, province, or internal business region) within the country where the store is located."
+      }
+    },
+    {
+      "column": "store_latitude",
+      "properties": {
+        "dtype": "number",
+        "std": 53.922230474972054,
+        "min": -76.2796605,
+        "max": 84.073104,
+        "samples": [
+          42.7552,
+          -76.2796605,
+          -65.8143565
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "latitude",
+        "description": "The geographical latitude coordinate of the store's physical location, used for mapping and location-based analysis."
+      }
+    },
+    {
+      "column": "store_longitude",
+      "properties": {
+        "dtype": "number",
+        "std": 74.62957325673248,
+        "min": -118.52161,
+        "max": 101.428813,
+        "samples": [
+          -20.574015,
+          1.748834,
+          -6.387259
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "longitude",
+        "description": "The geographical longitude coordinate of the store's physical location, used for mapping and location-based analysis."
+      }
+    },
+    {
+      "column": "store_sq_footage",
+      "properties": {
+        "dtype": "number",
+        "std": 8397.811312743605,
+        "min": 2370,
+        "max": 23874,
+        "samples": [
+          18516,
+          2599,
+          17464
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "store_size",
+        "description": "The total square footage of the retail store, indicating its physical size and capacity. This can be used to normalize sales or inventory metrics."
+      }
+    }
+  ],
+  "field_names": [
+    "store_key",
+    "store_id",
+    "store_name",
+    "city",
+    "country",
+    "region",
+    "store_latitude",
+    "store_longitude",
+    "store_sq_footage"
+  ]
+}

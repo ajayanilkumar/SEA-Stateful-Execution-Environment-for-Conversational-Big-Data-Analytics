@@ -1,0 +1,261 @@
+{
+  "name": "fact_sales",
+  "file_name": "fact_sales",
+  "dataset_description": "This table, `fact_sales`, serves as a core Fact table in GloboMart's e-commerce and retail star schema. It records individual sales transactions at the order item level, capturing key metrics and foreign keys to related dimension tables. Its primary purpose is to enable detailed analysis of sales performance, revenue, costs, and profitability across various dimensions such as product, customer, store, and time. It is central to reporting on sales trends, product performance, customer purchasing behavior, and store-level sales efficiency.",
+  "fields": [
+    {
+      "column": "order_item_id",
+      "properties": {
+        "dtype": "number",
+        "std": 34.435285520652926,
+        "min": 11309629,
+        "max": 11309705,
+        "samples": [
+          11309704,
+          11309630,
+          11309666
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "order_item_id",
+        "description": "A unique identifier for each individual item within a customer order. This represents a single line item in a sales transaction."
+      }
+    },
+    {
+      "column": "order_id",
+      "properties": {
+        "dtype": "number",
+        "std": 13.199326582148887,
+        "min": 523210,
+        "max": 523238,
+        "samples": [
+          523210,
+          523224,
+          523238
+        ],
+        "num_unique_values": 3,
+        "semantic_type": "order_id",
+        "description": "A unique identifier for a complete customer order, which can contain multiple order items."
+      }
+    },
+    {
+      "column": "date_key",
+      "properties": {
+        "dtype": "number",
+        "std": 0.9428090415820634,
+        "min": 20220825,
+        "max": 20220827,
+        "samples": [
+          20220825,
+          20220826,
+          20220827
+        ],
+        "num_unique_values": 3,
+        "semantic_type": "date_key",
+        "description": "Foreign key linking to the Date Dimension table, representing the date when the sales transaction occurred in YYYYMMDD format."
+      }
+    },
+    {
+      "column": "customer_key",
+      "properties": {
+        "dtype": "number",
+        "std": 9196.007065871338,
+        "min": 1504,
+        "max": 25065,
+        "samples": [
+          20165,
+          1504,
+          25065
+        ],
+        "num_unique_values": 3,
+        "semantic_type": "customer_id",
+        "description": "Foreign key linking to the Customer Dimension table, identifying the customer who placed the order."
+      }
+    },
+    {
+      "column": "product_key",
+      "properties": {
+        "dtype": "number",
+        "std": 2607.9022987834496,
+        "min": 6422,
+        "max": 14367,
+        "samples": [
+          14367,
+          10948,
+          12141
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "product_id",
+        "description": "Foreign key linking to the Product Dimension table, identifying the specific product sold in this order item."
+      }
+    },
+    {
+      "column": "store_key",
+      "properties": {
+        "dtype": "number",
+        "std": 112.51074022806297,
+        "min": 416,
+        "max": 687,
+        "samples": [
+          687,
+          416,
+          515
+        ],
+        "num_unique_values": 3,
+        "semantic_type": "store_id",
+        "description": "Foreign key linking to the Store Dimension table, identifying the physical or online store where the sale originated."
+      }
+    },
+    {
+      "column": "quantity_sold",
+      "properties": {
+        "dtype": "number",
+        "std": 0.7888106377466155,
+        "min": 1,
+        "max": 3,
+        "samples": [
+          2,
+          3,
+          1
+        ],
+        "num_unique_values": 3,
+        "semantic_type": "quantity",
+        "description": "The number of units of the specific product sold in this order item."
+      }
+    },
+    {
+      "column": "unit_price",
+      "properties": {
+        "dtype": "number",
+        "std": 718.4065152667937,
+        "min": 75.21,
+        "max": 2442.19,
+        "samples": [
+          665.61,
+          109.13,
+          235.78
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "price",
+        "description": "The selling price of a single unit of the product at the time of the sale, before any discounts."
+      }
+    },
+    {
+      "column": "unit_cost",
+      "properties": {
+        "dtype": "number",
+        "std": 387.51885337504694,
+        "min": 46.83,
+        "max": 1332.8,
+        "samples": [
+          312.21,
+          61.07,
+          156.77
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "cost",
+        "description": "The cost incurred by GloboMart for a single unit of the product sold."
+      }
+    },
+    {
+      "column": "discount_amount",
+      "properties": {
+        "dtype": "number",
+        "std": 125.70921594431069,
+        "min": 0.0,
+        "max": 399.36,
+        "samples": [
+          0.0,
+          21.82,
+          399.36
+        ],
+        "num_unique_values": 3,
+        "semantic_type": "discount",
+        "description": "The total monetary value of the discount applied to this specific order item."
+      }
+    },
+    {
+      "column": "tax_amount",
+      "properties": {
+        "dtype": "number",
+        "std": 115.1371584772797,
+        "min": 15.72,
+        "max": 390.76,
+        "samples": [
+          127.80000000000001,
+          15.72,
+          56.58
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "tax",
+        "description": "The total sales tax applied to this specific order item."
+      }
+    },
+    {
+      "column": "gross_revenue",
+      "properties": {
+        "dtype": "number",
+        "std": 1462.250310140732,
+        "min": 205.39,
+        "max": 4884.38,
+        "samples": [
+          1996.83,
+          218.26,
+          707.34
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "gross_revenue",
+        "description": "The total revenue generated from this order item before any discounts are applied (calculated as quantity_sold * unit_price)."
+      }
+    },
+    {
+      "column": "net_revenue",
+      "properties": {
+        "dtype": "number",
+        "std": 1439.1866088716765,
+        "min": 196.44,
+        "max": 4884.38,
+        "samples": [
+          1597.47,
+          196.44,
+          707.34
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "net_revenue",
+        "description": "The total revenue generated from this order item after applying discounts (calculated as gross_revenue - discount_amount). This represents the actual amount received from the customer for this item."
+      }
+    },
+    {
+      "column": "profit",
+      "properties": {
+        "dtype": "number",
+        "std": 656.8943956738996,
+        "min": 74.3,
+        "max": 2218.78,
+        "samples": [
+          660.8400000000001,
+          74.3,
+          237.02999999999997
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "profit",
+        "description": "The profit generated from this order item, calculated as (net_revenue - (quantity_sold * unit_cost))."
+      }
+    }
+  ],
+  "field_names": [
+    "order_item_id",
+    "order_id",
+    "date_key",
+    "customer_key",
+    "product_key",
+    "store_key",
+    "quantity_sold",
+    "unit_price",
+    "unit_cost",
+    "discount_amount",
+    "tax_amount",
+    "gross_revenue",
+    "net_revenue",
+    "profit"
+  ]
+}

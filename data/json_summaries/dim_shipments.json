@@ -1,0 +1,148 @@
+{
+  "name": "dim_shipments",
+  "file_name": "dim_shipments",
+  "dataset_description": "This table, despite its 'dim_' prefix, functions as a Fact table within GloboMart's e-commerce data warehouse. It captures detailed information about individual product shipments, serving as a central point for analyzing logistics performance, shipping costs, and delivery efficiency. It links to orders via `order_id` and provides key metrics related to the shipment process, such as dates, costs, weight, and delivery duration.",
+  "fields": [
+    {
+      "column": "shipment_key",
+      "properties": {
+        "dtype": "number",
+        "std": 3.0276503540974917,
+        "min": 547556,
+        "max": 547565,
+        "samples": [
+          547564,
+          547557,
+          547561
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "shipment_id",
+        "description": "A unique identifier for each individual shipment record. This serves as the primary key for this table."
+      }
+    },
+    {
+      "column": "order_id",
+      "properties": {
+        "dtype": "number",
+        "std": 3.0276503540974917,
+        "min": 589556,
+        "max": 589565,
+        "samples": [
+          589564,
+          589557,
+          589561
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "order_id",
+        "description": "The unique identifier for the customer order associated with this shipment. This acts as a foreign key linking to the `fact_orders` or `dim_orders` table."
+      }
+    },
+    {
+      "column": "carrier",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "FedEx",
+          "Delhivery",
+          "BlueDart"
+        ],
+        "num_unique_values": 4,
+        "semantic_type": "carrier",
+        "description": "The name of the logistics company or shipping carrier responsible for delivering the order."
+      }
+    },
+    {
+      "column": "shipped_date",
+      "properties": {
+        "dtype": "date",
+        "min": "2021-09-29T00:00:00",
+        "max": "2025-12-28T00:00:00",
+        "samples": [
+          "2022-09-27T00:00:00",
+          "2023-04-06T00:00:00",
+          "2022-11-10T00:00:00"
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "date",
+        "description": "The date on which the order or part of the order was dispatched from the warehouse or fulfillment center."
+      }
+    },
+    {
+      "column": "delivered_date",
+      "properties": {
+        "dtype": "date",
+        "min": "2021-10-05T00:00:00",
+        "max": "2026-01-06T00:00:00",
+        "samples": [
+          "2022-10-06T00:00:00",
+          "2023-04-12T00:00:00",
+          "2022-11-14T00:00:00"
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "date",
+        "description": "The date on which the shipment was successfully delivered to the customer."
+      }
+    },
+    {
+      "column": "shipping_cost",
+      "properties": {
+        "dtype": "number",
+        "std": 4.622865393286337,
+        "min": 9.07,
+        "max": 24.58,
+        "samples": [
+          18.27,
+          12.3,
+          11.65
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "cost",
+        "description": "The monetary cost incurred by GloboMart for shipping this particular order or shipment."
+      }
+    },
+    {
+      "column": "shipping_weight_kg",
+      "properties": {
+        "dtype": "number",
+        "std": 3.7606779826101686,
+        "min": 1.66,
+        "max": 13.35,
+        "samples": [
+          5.69,
+          8.94,
+          2.14
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "weight",
+        "description": "The total weight of the shipment in kilograms, used for calculating shipping charges and logistics planning."
+      }
+    },
+    {
+      "column": "delivery_days",
+      "properties": {
+        "dtype": "number",
+        "std": 2.0976176963403033,
+        "min": 4,
+        "max": 9,
+        "samples": [
+          6,
+          4,
+          9
+        ],
+        "num_unique_values": 5,
+        "semantic_type": "duration",
+        "description": "The number of days taken for the shipment to be delivered, calculated as the difference between `delivered_date` and `shipped_date`."
+      }
+    }
+  ],
+  "field_names": [
+    "shipment_key",
+    "order_id",
+    "carrier",
+    "shipped_date",
+    "delivered_date",
+    "shipping_cost",
+    "shipping_weight_kg",
+    "delivery_days"
+  ]
+}

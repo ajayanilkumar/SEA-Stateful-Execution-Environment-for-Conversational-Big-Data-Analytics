@@ -1,0 +1,177 @@
+{
+  "name": "dim_products",
+  "file_name": "dim_products",
+  "dataset_description": "This dimension table (`dim_products`) stores detailed information about all products sold by GloboMart. It serves as a core dimension in the star schema, allowing fact tables (e.g., sales, inventory) to be analyzed by various product attributes such as category, brand, and cost. It provides comprehensive context for transactional data, enabling in-depth product performance analysis and merchandising strategies.",
+  "fields": [
+    {
+      "column": "product_key",
+      "properties": {
+        "dtype": "number",
+        "std": 3.0276503540974917,
+        "min": 11251,
+        "max": 11260,
+        "samples": [
+          11259,
+          11252,
+          11256
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "product_key",
+        "description": "A unique surrogate key generated internally for each product, used for efficient joins with fact tables and ensuring data integrity within the data warehouse."
+      }
+    },
+    {
+      "column": "product_id",
+      "properties": {
+        "dtype": "number",
+        "std": 3.0276503540974917,
+        "min": 756251,
+        "max": 756260,
+        "samples": [
+          756259,
+          756252,
+          756256
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "product_id",
+        "description": "The unique identifier for the product as it is known in GloboMart's operational systems (e.g., ERP, PIM). This is the natural key for the product."
+      }
+    },
+    {
+      "column": "product_name",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "ComfortZone Cookware Catch",
+          "MetroStyle Dresse The",
+          "HearthHome Decor These"
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "product_name",
+        "description": "The official name or title of the product as displayed to customers on the e-commerce platform."
+      }
+    },
+    {
+      "column": "category",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "Home & Kitchen",
+          "Electronics",
+          "Apparel"
+        ],
+        "num_unique_values": 4,
+        "semantic_type": "category",
+        "description": "The high-level classification of the product, grouping similar items together (e.g., 'Electronics', 'Apparel', 'Home & Kitchen')."
+      }
+    },
+    {
+      "column": "sub_category",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "Jeans",
+          "Dresses",
+          "Hiking Boots"
+        ],
+        "num_unique_values": 7,
+        "semantic_type": "sub_category",
+        "description": "A more granular classification of the product within its main category, providing further detail (e.g., 'Smartphones' within 'Electronics', 'Dresses' within 'Apparel')."
+      }
+    },
+    {
+      "column": "brand",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "MetroStyle",
+          "Culina",
+          "ComfortZone"
+        ],
+        "num_unique_values": 7,
+        "semantic_type": "brand",
+        "description": "The brand name associated with the product, indicating its manufacturer or trademark."
+      }
+    },
+    {
+      "column": "product_cost",
+      "properties": {
+        "dtype": "number",
+        "std": 330.54963907609,
+        "min": 23.59,
+        "max": 1147.03,
+        "samples": [
+          248.24,
+          23.59,
+          376.91
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "cost",
+        "description": "The cost incurred by GloboMart to acquire or produce one unit of the product. This is typically the wholesale or manufacturing cost."
+      }
+    },
+    {
+      "column": "msrp",
+      "properties": {
+        "dtype": "number",
+        "std": 586.3797357846611,
+        "min": 40.55,
+        "max": 2013.1,
+        "samples": [
+          568.2,
+          48.46,
+          616.36
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "price",
+        "description": "The Manufacturer's Suggested Retail Price (MSRP) for the product. This is a recommended selling price, not necessarily the actual selling price."
+      }
+    },
+    {
+      "column": "inventory_count",
+      "properties": {
+        "dtype": "number",
+        "std": 121.14458762615484,
+        "min": 65,
+        "max": 428,
+        "samples": [
+          428,
+          353,
+          385
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "inventory_count",
+        "description": "The current number of units of this product available in stock across all GloboMart warehouses or fulfillment centers."
+      }
+    },
+    {
+      "column": "avg_rating",
+      "properties": {
+        "dtype": "number",
+        "std": 0.6110973735829667,
+        "min": 3.41,
+        "max": 5.0,
+        "samples": [
+          4.16,
+          3.65,
+          4.13
+        ],
+        "num_unique_values": 9,
+        "semantic_type": "rating",
+        "description": "The average customer rating for the product, typically on a scale (e.g., 1 to 5 stars), derived from customer reviews and feedback."
+      }
+    }
+  ],
+  "field_names": [
+    "product_key",
+    "product_id",
+    "product_name",
+    "category",
+    "sub_category",
+    "brand",
+    "product_cost",
+    "msrp",
+    "inventory_count",
+    "avg_rating"
+  ]
+}

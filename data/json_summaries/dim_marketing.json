@@ -1,0 +1,181 @@
+{
+  "name": "dim_marketing",
+  "file_name": "dim_marketing",
+  "dataset_description": "This is a Dimension table in the GloboMart data warehouse, storing detailed information about various marketing campaigns. It serves as a descriptive lookup table for campaign-related attributes, allowing for analysis of campaign performance, effectiveness, and ROI when joined with fact tables like 'fact_sales' or 'fact_marketing_performance'. Each row represents a unique marketing campaign.",
+  "fields": [
+    {
+      "column": "campaign_key",
+      "properties": {
+        "dtype": "number",
+        "std": 3.0276503540974917,
+        "min": 301,
+        "max": 310,
+        "samples": [
+          309,
+          302,
+          306
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "campaign_id",
+        "description": "A unique identifier for each marketing campaign. This serves as the primary key for the dim_marketing table and is used to link to fact tables."
+      }
+    },
+    {
+      "column": "campaign_name",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "Flash Deal 2025",
+          "Brand Awareness 2022",
+          "Brand Awareness 2024"
+        ],
+        "num_unique_values": 7,
+        "semantic_type": "campaign_name",
+        "description": "The descriptive name of the marketing campaign, providing a human-readable label for identification."
+      }
+    },
+    {
+      "column": "start_date",
+      "properties": {
+        "dtype": "date",
+        "min": "2021-05-18",
+        "max": "2025-09-10",
+        "samples": [
+          "2025-05-30",
+          "2022-04-10",
+          "2021-05-18"
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "timestamp",
+        "description": "The calendar date when the marketing campaign officially commenced."
+      }
+    },
+    {
+      "column": "end_date",
+      "properties": {
+        "dtype": "date",
+        "min": "2021-06-04",
+        "max": "2025-11-05",
+        "samples": [
+          "2025-06-20",
+          "2022-06-16",
+          "2021-06-04"
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "timestamp",
+        "description": "The calendar date when the marketing campaign officially concluded."
+      }
+    },
+    {
+      "column": "channel",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "Paid Search",
+          "Social Media",
+          "Email"
+        ],
+        "num_unique_values": 5,
+        "semantic_type": "marketing_channel",
+        "description": "The primary marketing channel or platform through which the campaign was executed (e.g., Email, Social Media, Paid Search, Display Ads)."
+      }
+    },
+    {
+      "column": "budget",
+      "properties": {
+        "dtype": "number",
+        "std": 29278.265230828823,
+        "min": 19295.47,
+        "max": 96338.17,
+        "samples": [
+          81524.82,
+          96338.17,
+          43296.33
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "budget",
+        "description": "The total financial budget allocated for the entire duration of the marketing campaign."
+      }
+    },
+    {
+      "column": "total_spend",
+      "properties": {
+        "dtype": "number",
+        "std": 27530.82705927061,
+        "min": 20763.08,
+        "max": 96554.97,
+        "samples": [
+          68026.11,
+          96554.97,
+          47527.18
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "cost",
+        "description": "The actual total amount of money expended on the marketing campaign, including all associated costs."
+      }
+    },
+    {
+      "column": "impressions",
+      "properties": {
+        "dtype": "number",
+        "std": 2627084.1439504772,
+        "min": 1297163,
+        "max": 7971304,
+        "samples": [
+          4094412,
+          6757820,
+          2010895
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "impressions",
+        "description": "The total number of times the campaign's content (e.g., ad, email) was displayed or viewed by users."
+      }
+    },
+    {
+      "column": "clicks",
+      "properties": {
+        "dtype": "number",
+        "std": 81837.32169432234,
+        "min": 41875,
+        "max": 284907,
+        "samples": [
+          83361,
+          138465,
+          92836
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "clicks",
+        "description": "The total number of times users interacted with the campaign's content by clicking on it."
+      }
+    },
+    {
+      "column": "conversions",
+      "properties": {
+        "dtype": "number",
+        "std": 4655.750166311666,
+        "min": 2530,
+        "max": 18033,
+        "samples": [
+          5267,
+          12593,
+          2530
+        ],
+        "num_unique_values": 10,
+        "semantic_type": "conversions",
+        "description": "The total number of desired actions completed by users as a direct result of the campaign (e.g., purchases, sign-ups, lead generations)."
+      }
+    }
+  ],
+  "field_names": [
+    "campaign_key",
+    "campaign_name",
+    "start_date",
+    "end_date",
+    "channel",
+    "budget",
+    "total_spend",
+    "impressions",
+    "clicks",
+    "conversions"
+  ]
+}

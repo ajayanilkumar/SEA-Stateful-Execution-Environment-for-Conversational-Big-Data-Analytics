@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: sea-analytics
+Version: 0.1.0
+Summary: Stateful Execution Environment for Conversational Big Data Analytics (NeurIPS 2025)
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pydantic>=2.0
+Requires-Dist: google-genai>=1.0
+Requires-Dist: langchain-google-genai>=2.0
+Requires-Dist: langchain>=0.3
+Requires-Dist: langchain-community>=0.3
+Requires-Dist: chromadb>=0.5
+Requires-Dist: sentence-transformers>=3.0
+Requires-Dist: pandas>=2.0
+Requires-Dist: numpy>=1.26
+Requires-Dist: databricks-sql-connector>=3.0
+Requires-Dist: boto3>=1.34
+Requires-Dist: matplotlib>=3.8
+Requires-Dist: seaborn>=0.13
+Requires-Dist: plotly>=5.0
+Requires-Dist: Pillow>=10.0
+Requires-Dist: fastapi>=0.111
+Requires-Dist: uvicorn[standard]>=0.29
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.23; extra == "dev"
+Requires-Dist: httpx>=0.27; extra == "dev"
