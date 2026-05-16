@@ -19,9 +19,6 @@ Existing LLM agents for data analytics operate **statelessly** — re-running ex
 
 The key insight: the planner's job is no longer open-ended workflow discovery. It becomes a tractable **node classification problem** — *"which node should I resume from to maximise state reuse?"*
 
-<p align="center">
-  <img width="700" src="https://raw.githubusercontent.com/langchain-ai/langgraph/main/docs/static/img/langgraph_logo.png" alt="placeholder — replace with Figure 1 from paper">
-</p>
 
 ### Results on the GloboMart Benchmark (100 conversational queries)
 
